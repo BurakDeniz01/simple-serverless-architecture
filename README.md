@@ -21,21 +21,21 @@ Before beginning:
 
 ### Healthcheck endpoint
 
-With `url/healthcheck` you can check if the lambda is alive. 
+Send a GET request to `url/healthcheck` to check the lambda is alive. 
 
 If status of response is 200, Lambda is alive.
 
 Ex:
-`https://your_unique_aws_api_gateway_url/healthcheck`
+GET `https://your_unique_aws_api_gateway_url/healthcheck`
 
 ### Coin list endpoint
 
-With `url/coins/list` you can get all list of coins. 
+Send a GET request to `url/coins/list` to get all list of coins. 
+
+Ex:
+GET `https://your_unique_aws_api_gateway_url/coins/list`
 
 If status of response is 200, body of response has list of coins. 
 If status of response is 504, API gateway timeout. 
 If status of response is 404, your path after your_unique_aws_api_gateway_url is wrong.
-If status of response is 500, something go wrong. Please check cloudWatch
-
-Ex:
-`https://your_unique_aws_api_gateway_url/coins/list`
+If status of response is 500, something go wrong. Please check cloudWatch.

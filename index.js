@@ -116,8 +116,8 @@ function buildResponse(statusCode, body) {
 
 // write data on S3 bucket
 async function putObjectToS3(data) {
-    var s3 = new AWS.S3();
-    var params = {
+    let s3 = new AWS.S3();
+    let params = {
         Bucket: bucket,
         Key: fileName,
         Body: JSON.stringify(data)
@@ -129,7 +129,7 @@ async function putObjectToS3(data) {
 }
 // import data from S3 bucket to DynamoDB
 async function importDynamoDB() {
-    var params = {
+    let params = {
         InputFormat: "DYNAMODB_JSON", // Data type on S3 bucket
         S3BucketSource: {
             S3Bucket: bucket, // Bucket Name
